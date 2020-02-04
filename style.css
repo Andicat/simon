@@ -1,5 +1,6 @@
 :root {
   --color: white;
+  --color_shadow_button: rgba(15,15,15,0.5);
 }
 
 body {
@@ -18,12 +19,14 @@ a {
 	position: relative;
 	box-sizing: content-box;
 	background-color: black;
-	width: 400px;
-	height: 400px;
-	padding: 40px;
+	width: 80vw;
+	height: 80vw;
+	max-width: 400px;
+	max-height: 400px;
 	margin: 30px auto;
 	border-radius: 50%;
-	box-shadow: inset 0px 0px 25px 5px rgba(255,255,255,0.5);
+	border: 30px solid black;
+	/*box-shadow: inset 0px 0px 25px 5px rgba(255,255,255,0.5);*/
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -32,43 +35,53 @@ a {
 }
 
 .game__sector {
-	width: calc(50% - 20px);
-	height: calc(50% - 20px);
-	margin: 0 0 40px 0; 
-	background:transparent;
+	width: calc(50% - 15px);
+	height: calc(50% - 15px);
+	margin: 0 0 30px 0; 
+	background: transparent;
+	outline: none;
+	border: none;
+	opacity: 0.9;
 }
 
-.green {
-	background-color: green;
+.active {
+  	opacity: 0.5;
+ }
+
+.game__sector[id='green'] {
+	background-color: palegreen;
 	border-top-left-radius: 100%;
-	box-shadow:	inset 15px 15px 25px 10px rgba(0,0,0,0.5);
+	box-shadow:	inset 15px 15px 25px 10px var(--color_shadow_button);
+	
 }
 
-.red {
+.game__sector[id='red'] {
 	border-top-right-radius: 100%;
-	background-color: red;
-	box-shadow:	inset -15px 15px 25px 10px rgba(0,0,0,0.5);
+	background-color: salmon;
+	box-shadow:	inset -15px 15px 25px 10px var(--color_shadow_button);
 }
 
-.yellow {
+.game__sector[id='yellow'] {
 	background-color: yellow;
 	border-bottom-right-radius: 100%;
-	box-shadow:	inset -15px -15px 25px 10px rgba(0,0,0,0.5);
+	box-shadow:	inset -15px -15px 25px 10px var(--color_shadow_button);
 }
 
-.blue {
-	background-color: blue;
+.game__sector[id='blue'] {
+	background-color: skyblue;
 	border-bottom-left-radius: 100%;
-	box-shadow:	inset 15px -15px 25px 10px rgba(0,0,0,0.5);
+	box-shadow:	inset 15px -15px 25px 10px var(--color_shadow_button);
 }
 
 .test {
+	display: none;
+	position: relative;
 	width: 155px;
 	height: 155px;
 	margin: 10px auto;
 	background-color: blue;
 	border-bottom-left-radius: 100%;
-	box-shadow:	inset 15px -15px 25px 10px rgba(0,0,0,0.5);
+	box-shadow:	inset 15px -15px 25px 10px var(--color_shadow_button);
   	transition: background .2s ease-in-out;
 }
 
@@ -94,7 +107,7 @@ a {
 
 .game__name {
 	font-size: 30px;
-	margin-bottom: 0px;
+	margin-bottom: 10px;
 }
 
 .game__count {
@@ -109,6 +122,7 @@ a {
 	height: 25%;
 	width: 25%;
 	border-radius: 50%;
-	border: 3px solid white 0.5;
+	border: 3px solid white 0.7;
 	padding: 0;
+	outline: none;
 }
