@@ -1,14 +1,15 @@
 'use strict';
 
 (function () {
-  var DELAY = 100;
-  var SOUND_DELAY = 500;
+  var DELAY = 50;
+  var SOUND_DELAY =500;
 
   var Sounds = {
     green: 'fa',
     red: 'do',
     yellow: 'si',
-    blue: 're'
+    blue: 're',
+    error: 'error'
   };
 
   var buttons = document.querySelectorAll('.game__sector');
@@ -62,6 +63,7 @@
       }, 1000);
       
     } else {
+      playSound('error');
       setCount('start');
       counter.set(0);
       arrTemplate = [];
@@ -152,6 +154,7 @@
   function playSound(color) {
     var myAudio = new Audio;
     myAudio.src = 'mp3/' +  Sounds[color] + '.mp3';
+    /*myAudio.defaultPlaybackRate = 1.5;*/
     myAudio.play();
   }
 
