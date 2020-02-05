@@ -45,6 +45,7 @@ a {
 	border: none;
 	opacity: 0.9;
 	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .game__sector_active {
@@ -87,7 +88,6 @@ a {
 	height: 150px;
 	margin: 0;
 	border-radius: 50%;
-	/*box-shadow: inset 0px 0px 10px 3px rgba(255,255,255,0.5);*/
 	transform: translate(-50%,-50%);
 	display: flex;
 	flex-direction: column;
@@ -100,11 +100,7 @@ a {
 .game__name {
 	font-size: 30px;
 	margin-bottom: 5px;
-	/*свечение*/
-	/*text-shadow:  0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;*/
- /*color: transparent;*/
     text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
-
 }
 
 .game__count {
@@ -126,10 +122,11 @@ a {
   	cursor: pointer;
   	display: inline-block;
   	outline: none;
+  	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .game__start:hover {
-	background: #333;
+	background: grey;
   	box-shadow: 0 -2px 0 3px #1a1a1a inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset;
 }
 

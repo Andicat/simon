@@ -1,8 +1,8 @@
 'use strict';
 
 (function () {
-  var DELAY = 50;
-  var SOUND_DELAY =500;
+  var DELAY = 80;
+  var SOUND_DELAY = 500;
 
   var Sounds = {
     green: 'fa',
@@ -147,14 +147,12 @@
         bt.classList.remove('game__sector_active');
       }, SOUND_DELAY*(i + 1) + DELAY*i);
     });
-
-    setTimeout(function() { disableButtons(true) }, DELAY * roundNumber);
+    setTimeout(function() { disableButtons(true) }, (SOUND_DELAY*roundNumber + DELAY*roundNumber));
   }
 
   function playSound(color) {
     var myAudio = new Audio;
     myAudio.src = 'mp3/' +  Sounds[color] + '.mp3';
-    /*myAudio.defaultPlaybackRate = 1.5;*/
     myAudio.play();
   }
 
