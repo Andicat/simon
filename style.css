@@ -1,5 +1,4 @@
 :root {
-  --color: white;
   --color_shadow_button: rgba(15,15,15,0.5);
 }
 
@@ -7,7 +6,10 @@ body {
 	font-family: "Arial", sans-serif;
 	color: #000000;
 	text-align: center;
-	background-color: var(--color);
+	background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), 
+				linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 3px 3px, 
+				radial-gradient(at 50% 0, #484847, #090909);
+	background-size: 5px 5px, 5px 5px, 100vw 100vh;
 	margin: 0;
 }
 
@@ -26,12 +28,12 @@ a {
 	margin: 30px auto;
 	border-radius: 50%;
 	border: 30px solid black;
-	/*box-shadow: inset 0px 0px 25px 5px rgba(255,255,255,0.5);*/
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	overflow: hidden;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .game__sector {
@@ -42,9 +44,10 @@ a {
 	outline: none;
 	border: none;
 	opacity: 0.9;
+	cursor: pointer;
 }
 
-.active {
+.game__sector_active {
   	opacity: 0.5;
  }
 
@@ -73,17 +76,6 @@ a {
 	box-shadow:	inset 15px -15px 25px 10px var(--color_shadow_button);
 }
 
-.test {
-	display: none;
-	position: relative;
-	width: 155px;
-	height: 155px;
-	margin: 10px auto;
-	background-color: blue;
-	border-bottom-left-radius: 100%;
-	box-shadow:	inset 15px -15px 25px 10px var(--color_shadow_button);
-  	transition: background .2s ease-in-out;
-}
 
 .game__display {
 	position: absolute;
@@ -102,27 +94,61 @@ a {
 	align-items: center;
 	justify-content: center;
 	text-transform: uppercase;
-	color: var(--color);
+	color: white;
 }
 
 .game__name {
 	font-size: 30px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
+	/*свечение*/
+	/*text-shadow:  0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;*/
+ /*color: transparent;*/
+    text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+
 }
 
 .game__count {
+	display: block;
+	color: white;
 	font-size: 20px;
 	margin-bottom: 5px;
 }
 
 .game__start {
+	font-size: 15px;
 	font-weight: bold;
-	display: block;
-	background-color: grey;
-	height: 25%;
-	width: 25%;
+	height: 35%;
+	width: 35%;
 	border-radius: 50%;
-	border: 3px solid white 0.7;
-	padding: 0;
-	outline: none;
+	border: 2px solid grey;
+	background: #E53030;
+  	/*border: 3px solid #5f5f5f;*/
+  	box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  	cursor: pointer;
+  	display: inline-block;
+  	outline: none;
+}
+
+.game__start:hover {
+	background: #333;
+  	box-shadow: 0 -2px 0 3px #1a1a1a inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset;
+}
+
+.game__start_active {
+	background: #0EC518;
+  	box-shadow: 0 -2px 0 3px #0b9512 inset, 0 5px 5px rgba(0, 7, 1, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+}
+
+.game__start_active:hover {
+ 	background: #E53030;
+}
+
+.auth {
+	color: white;
+	font-size: 10px;
+	font-style: italic;
+}
+
+.auth:hover {
+	opacity: 0.7;
 }

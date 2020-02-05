@@ -4,9 +4,9 @@
 var gulp = require("gulp");
 
 //загружаем плагины gulp
-var server = require("browser-sync").create();
-var posthtml = require("gulp-posthtml");
-var include = require("posthtml-include");
+var server    = require("browser-sync").create();
+var posthtml  = require("gulp-posthtml");
+var include   = require("posthtml-include");
 
 gulp.task("html", function () {
   return gulp.src("*.html")
