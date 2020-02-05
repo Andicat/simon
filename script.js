@@ -16,6 +16,7 @@
   var buttonStart = document.querySelector('.game__start');
   var buttonStartText = document.querySelector('.game__start_start');
   var countText = document.querySelector('.game__count');
+  var gameStatus = document.querySelector('.game__name');
   var counter = makeCounter();
   var sound = document.querySelector('.mp3');
   var currentCount = 0;
@@ -56,7 +57,7 @@
   function result(res) {
     record = record < currentCount ? currentCount : record;
     if (res) {
-      setCount(currentCount);
+      setResult('result');
       setTimeout(function() {
         counter();
         setRound(currentCount)
@@ -64,7 +65,7 @@
       
     } else {
       playSound('error');
-      setCount('start');
+      setResult('start');
       counter.set(0);
       arrTemplate = [];
       buttonStart.classList.remove('game__start_active');
@@ -73,11 +74,30 @@
   }
 
   // выводим счет игры
-  function setCount(text) {
-    countText.textContent = record > 1 ? ('Ваш рекорд: ' + (record - 1)) : '';
-    buttonStart.textContent = text;
+  function setResult(option,text) {
+    switch (option) {
+      case 'start':
+        countText.textContent = record > 1 ? ('Ваш рекорд: ' + (record - 1)) : '';
+        gameStatus.textContent = 'SIMON';
+        gameStatus.classList.remove('hide');
+        buttonStart.classList.remove('hide');
+        break;
+      case 'round':
+        gameStatus.textContent = 'ROUND №' + currentCount;
+        gameStatus.classList.remove('hide');
+        buttonStart.classList.add('hide');
+        break;
+      case 'repeat':
+        gameStatus.textContent = 'repeat...';
+        gameStatus.classList.remove('hide');
+        buttonStart.classList.add('hide');
+        break;
+      case 'result':
+        gameStatus.textContent = 'Great!';
+        buttonStart.classList.add('hide');
+    }
   }
-
+  
   // счетчик
   function makeCounter() {
     
@@ -101,7 +121,6 @@
   function onClickButtonStart() {
     counter.set(0);
     arrTemplate = [];
-    setCount(currentCount);
     buttonStart.classList.add('game__start_active');
     disableButtons(true);
     counter();
@@ -136,6 +155,7 @@
       textTemplate = textTemplate +  bt.id + ' ';
     });
     console.log(textTemplate);
+    setResult('round');
 
     // демонстрация
     arrTemplate.forEach(function (bt, i) {
@@ -147,7 +167,10 @@
         bt.classList.remove('game__sector_active');
       }, SOUND_DELAY*(i + 1) + DELAY*i);
     });
-    setTimeout(function() { disableButtons(true) }, (SOUND_DELAY*roundNumber + DELAY*roundNumber));
+    setTimeout(function() { 
+      disableButtons(true);
+      setResult('repeat'); 
+    }, (SOUND_DELAY*roundNumber + DELAY*roundNumber));
   }
 
   function playSound(color) {

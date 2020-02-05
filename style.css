@@ -99,6 +99,7 @@ a {
 
 .game__name {
 	font-size: 30px;
+	text-transform: initial;
 	margin-bottom: 5px;
     text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
@@ -116,8 +117,8 @@ a {
 	height: 35%;
 	width: 35%;
 	border-radius: 50%;
-	border: 2px solid grey;
-	background: red;
+	border: 2px solid #5a5a5a;
+	background: #d63037;
   	box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
   	cursor: pointer;
   	display: inline-block;
@@ -127,16 +128,16 @@ a {
 
 .game__start:hover {
 	background: grey;
-  	box-shadow: 0 -2px 0 3px #1a1a1a inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset;
+  	box-shadow: 0 -2px 0 3px #575757 inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset;
 }
 
 .game__start_active {
-	background: green;
-  	box-shadow: 0 -2px 0 3px #0b9512 inset, 0 5px 5px rgba(0, 7, 1, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+	background: #30d658;
+  	box-shadow: 0 -2px 0 3px #16bf1e inset, 0 5px 5px rgba(0, 7, 1, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
 }
 
 .game__start_active:hover {
- 	background: red;
+ 	background: #d63037;
  	box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
 }
 
@@ -161,4 +162,8 @@ a {
 .game__start_active:focus,
 .game__start_active:hover {
 	outline: none;
+}
+
+.hide {
+	display: none;
 }
