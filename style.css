@@ -45,7 +45,6 @@ a {
 	border: none;
 	opacity: 0.9;
 	cursor: pointer;
-	webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .game__sector_active {
@@ -152,4 +151,11 @@ a {
 
 .auth:hover {
 	opacity: 0.7;
+}
+
+.game__sector:focus,
+.game__sector:hover,
+.game__start:focus,
+.game__start:hover {
+	outline: none;
 }
