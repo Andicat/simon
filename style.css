@@ -6,6 +6,9 @@ body {
 	font-family: "Arial", sans-serif;
 	color: #000000;
 	text-align: center;
+	background: -o-linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), 
+				-o-linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 3px 3px, 
+				-o-radial-gradient(at 50% 0, #484847, #090909);
 	background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), 
 				linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 3px 3px, 
 				radial-gradient(at 50% 0, #484847, #090909);
@@ -19,7 +22,8 @@ a {
 
 .game__box {
 	position: relative;
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 	background-color: black;
 	width: 80vw;
 	height: 80vw;
@@ -28,12 +32,20 @@ a {
 	margin: 30px auto;
 	border-radius: 50%;
 	border: 30px solid black;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	overflow: hidden;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .game__sector {
@@ -50,31 +62,35 @@ a {
 
 .game__sector_active {
   	opacity: 0.5;
- }
+}
 
 .game__sector[id='green'] {
 	background-color: palegreen;
 	border-top-left-radius: 100%;
-	box-shadow:	inset 15px 15px 25px 10px var(--color_shadow_button);
+	-webkit-box-shadow:	inset 15px 15px 25px 10px var(--color_shadow_button);
+	        box-shadow:	inset 15px 15px 25px 10px var(--color_shadow_button);
 	
 }
 
 .game__sector[id='red'] {
 	border-top-right-radius: 100%;
 	background-color: salmon;
-	box-shadow:	inset -15px 15px 25px 10px var(--color_shadow_button);
+	-webkit-box-shadow:	inset -15px 15px 25px 10px var(--color_shadow_button);
+	        box-shadow:	inset -15px 15px 25px 10px var(--color_shadow_button);
 }
 
 .game__sector[id='yellow'] {
 	background-color: yellow;
 	border-bottom-right-radius: 100%;
-	box-shadow:	inset -15px -15px 25px 10px var(--color_shadow_button);
+	-webkit-box-shadow:	inset -15px -15px 25px 10px var(--color_shadow_button);
+	        box-shadow:	inset -15px -15px 25px 10px var(--color_shadow_button);
 }
 
 .game__sector[id='blue'] {
 	background-color: skyblue;
 	border-bottom-left-radius: 100%;
-	box-shadow:	inset 15px -15px 25px 10px var(--color_shadow_button);
+	-webkit-box-shadow:	inset 15px -15px 25px 10px var(--color_shadow_button);
+	        box-shadow:	inset 15px -15px 25px 10px var(--color_shadow_button);
 }
 
 
@@ -88,11 +104,22 @@ a {
 	height: 150px;
 	margin: 0;
 	border-radius: 50%;
-	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	    -ms-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	text-transform: uppercase;
 	color: white;
 }
@@ -119,7 +146,8 @@ a {
 	border-radius: 50%;
 	border: 2px solid #5a5a5a;
 	background: #d63037;
-  	box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  	-webkit-box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  	        box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
   	cursor: pointer;
   	display: inline-block;
   	outline: none;
@@ -128,17 +156,20 @@ a {
 
 .game__start:hover {
 	background: grey;
-  	box-shadow: 0 -2px 0 3px #575757 inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset;
+  	-webkit-box-shadow: 0 -2px 0 3px #575757 inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset;
+  	        box-shadow: 0 -2px 0 3px #575757 inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset;
 }
 
 .game__start_active {
 	background: #30d658;
-  	box-shadow: 0 -2px 0 3px #16bf1e inset, 0 5px 5px rgba(0, 7, 1, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  	-webkit-box-shadow: 0 -2px 0 3px #16bf1e inset, 0 5px 5px rgba(0, 7, 1, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  	        box-shadow: 0 -2px 0 3px #16bf1e inset, 0 5px 5px rgba(0, 7, 1, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
 }
 
 .game__start_active:hover {
  	background: #d63037;
- 	box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+ 	-webkit-box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+ 	        box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
 }
 
 .auth {

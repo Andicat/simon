@@ -4,15 +4,16 @@
   var DELAY = 80;
   var SOUND_DELAY = 500;
 
-  var Sounds = {
+  /*var Sounds = {
     green: 'fa',
     red: 'do',
     yellow: 'si',
     blue: 're',
     error: 'error'
-  };
+  };*/
 
   var buttons = document.querySelectorAll('.game__sector');
+  var sounds = document.querySelectorAll('.game__sound');
   var buttonStart = document.querySelector('.game__start');
   var buttonStartText = document.querySelector('.game__start_start');
   var countText = document.querySelector('.game__count');
@@ -174,9 +175,10 @@
   }
 
   function playSound(color) {
-    var myAudio = new Audio;
-    myAudio.src = 'mp3/' +  Sounds[color] + '.mp3';
-    myAudio.play();
+    document.getElementById(color + '_sound').cloneNode().play();
+    //var myAudio = new Audio;
+    //myAudio.src = 'mp3/' +  Sounds[color] + '.mp3';
+    //myAudio.play();
   }
 
 })();
